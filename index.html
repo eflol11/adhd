@@ -53,6 +53,7 @@
     }
   }
 
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
@@ -255,25 +256,6 @@
       transform: scale(1.10);
     }
   }
-
-  /* Si l’OS demande de réduire les animations, on neutralise */
-  @media (prefers-reduced-motion: reduce) {
-    .exec-card:hover,
-    .exec-card:focus-within,
-    .vision-item:hover,
-    .vision-item:focus-within,
-    .not-item:hover,
-    .not-item:focus-within,
-    .but-item:hover,
-    .but-item:focus-within,
-    .closing:hover,
-    .closing:focus-within,
-    .distinction:hover,
-    .distinction:focus-within {
-      transform: none !important;
-      box-shadow: none !important;
-      filter: none !important;
-    }
 
     .vision-item:hover .vision-icon,
     .vision-item:focus-within .vision-icon {
@@ -1152,7 +1134,7 @@
         Le TDAH n'est pas un manque d'intelligence ou de volonté. C'est un déficit de fonctions exécutives —
         le système de gestion qui transforme l'intention en action. Chaque jour, ces six fonctions fonctionnent en sous-régime :
       </p>
-      <p class="body">Parmi les six principales — initiation, mémoire de travail, planification, régulation émotionnelle, transition, auto-monitoring — voici les quatre qui pèsent le plus au quotidien :</p>
+      <p class="body">Parmi les six principales — initiation, mémoire de travail, planification, régulation émotionnelle, transition, auto-monitoring — voici celles qui pèsent le plus au quotidien :</p>
 
       <div class="exec-grid" role="list">
         <div class="exec-card gap" role="listitem">
@@ -1250,7 +1232,7 @@
           <div class="vision-icon" aria-hidden="true">🔄</div>
           <div>
             <div class="vision-item-title">Elle relance sans culpabiliser</div>
-            <div class="vision-item-desc">Pas de streak cassé. Pas de « vous n'avez pas fait X ». Juste une reprise douce, là où tu en étais, comme si rien ne s'était passé.</div>
+            <div class="vision-item-desc">Pas de streak cassé. Pas de « tu n’as pas fait X ». Juste une reprise douce, là où tu en étais, comme si rien ne s'était passé.</div>
             <div class="vision-item-example">« Hey — le doc est toujours là où tu l'as laissé. On reprend ? »</div>
           </div>
         </div>
@@ -1269,7 +1251,7 @@
           <div>
             <div class="mini-label">proactif</div>
             <div class="vision-item-title">Elle initie le premier pas</div>
-            <div class="vision-item-desc">Pas un rappel passif — une amorce. La différence entre « n'oubliez pas » (que j'ignore) et « j'ai déjà commencé » (le mur est percé).</div>
+            <div class="vision-item-desc">Pas un rappel passif — une amorce. La différence entre « n'oublie pas » (que j'ignore) et « j'ai déjà commencé » (le mur est percé).</div>
             <div class="vision-item-example">« Devoir pour jeudi : j'ai créé le doc, posé le plan, trouvé 3 sources. Tu veux juste jeter un œil ? »</div>
             <div class="vision-map">↔ initiation, planification</div>
           </div>
@@ -1515,19 +1497,19 @@
 
         <div class="scenario-beat">
           <div class="scenario-time">7h45 — Réveil</div>
-          <div class="scenario-action"><em>« Bon matin. Pendant la nuit : 2 brouillons prêts (10 sec à valider), 1 échéance sécurisée. Aujourd'hui : philo à 10h. Le texte de Bergson est dans votre sac ? »</em></div>
+          <div class="scenario-action"><em>« Bon matin. Pendant la nuit : 2 brouillons prêts (10 sec à valider), 1 échéance sécurisée. Aujourd'hui : philo à 10h. Le texte de Bergson est dans ton sac ? »</em></div>
           <div class="scenario-internal">Je ne découvre pas une liste de trucs à faire. Je découvre une liste de trucs déjà préparés qui attendent un “ok”.</div>
         </div>
 
         <div class="scenario-beat">
           <div class="scenario-time">9h00 — Paralysie matinale</div>
-          <div class="scenario-action">Je suis réveillé mais figé. <em>« Un seul geste : validez ce brouillon (10 secondes). Ensuite, mettez vos chaussures. »</em></div>
+          <div class="scenario-action">Je suis réveillé mais figé. <em>« Un seul geste : valide ce brouillon (10 secondes). Ensuite, mets tes chaussures. »</em></div>
           <div class="scenario-internal">Le “ok” coûte presque zéro effort, mais crée un micro-mouvement. La boucle d'initiation est amorcée.</div>
         </div>
 
         <div class="scenario-beat">
           <div class="scenario-time">13h00 — Sortie de cours</div>
-          <div class="scenario-action"><em>« La pharmacie est à 200 m sur ton chemin. Si vous passez maintenant, c'est fait en 6 minutes. »</em></div>
+          <div class="scenario-action"><em>« La pharmacie est à 200 m sur ton chemin. Si tu passes maintenant, c'est fait en 6 minutes. »</em></div>
           <div class="scenario-internal">Rappel contextuel, pas un timer arbitraire que j'ignore.</div>
         </div>
 
