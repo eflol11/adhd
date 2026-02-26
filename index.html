@@ -38,7 +38,13 @@
     .closing:hover,
     .closing:focus-within,
     .distinction:hover,
-    .distinction:focus-within {
+    .distinction:focus-within,
+    .exec-card:active,
+    .vision-item:active,
+    .not-item:active,
+    .but-item:active,
+    .closing:active,
+    .distinction:active {
       transform: none !important;
       transition: none !important;
       box-shadow: none !important;
@@ -225,7 +231,7 @@
     transition: transform 280ms cubic-bezier(0.2, 0.9, 0.2, 1);
   }
 
-  @media (hover: hover) and (pointer: fine) {
+  @media (any-hover: hover) and (any-pointer: fine) {
     .exec-card:hover,
     .exec-card:focus-within,
     .vision-item:hover,
@@ -485,6 +491,61 @@
   .vision-item.layer3 .vision-item-example {
     color: #9a7030;
     background: rgba(212, 160, 84, 0.09);
+  }
+
+  .mini-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .vision-map {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    line-height: 1.45;
+  }
+
+  .section-line {
+    width: 60px;
+    height: 2px;
+    background: var(--terracotta);
+    margin-top: 18px;
+    border-radius: 1px;
+  }
+
+  .micro-scenario {
+    margin-top: 28px;
+    margin-bottom: 28px;
+    padding: 14px 16px;
+    background: var(--warm-bg);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+  }
+
+  .micro-line {
+    font-size: 0.82rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin-bottom: 4px;
+  }
+
+  .micro-line:last-child { margin-bottom: 0; }
+
+  .micro-time {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-right: 8px;
+  }
+
+  .cta-line {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 16px;
   }
 
   /* ===== PRINCIPLES ===== */
@@ -927,6 +988,20 @@
   .fade-up:nth-child(4) { animation-delay: 0.3s; }
 
 
+  @media (any-pointer: coarse) {
+    .exec-card:active,
+    .vision-item:active,
+    .not-item:active,
+    .but-item:active,
+    .closing:active,
+    .distinction:active {
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: 0 18px 45px rgba(44,36,22,0.14);
+      transition: transform 140ms ease, box-shadow 140ms ease;
+    }
+  }
+
+
   /* ===== RESPONSIVE POLISH ===== */
   @media (max-width: 900px) {
     main.page {
@@ -1077,6 +1152,7 @@
         Le TDAH n'est pas un manque d'intelligence ou de volonté. C'est un déficit de fonctions exécutives —
         le système de gestion qui transforme l'intention en action. Chaque jour, ces six fonctions fonctionnent en sous-régime :
       </p>
+      <p class="body">Parmi les six principales — initiation, mémoire de travail, planification, régulation émotionnelle, transition, auto-monitoring — voici les quatre qui pèsent le plus au quotidien :</p>
 
       <div class="exec-grid" role="list">
         <div class="exec-card gap" role="listitem">
@@ -1140,6 +1216,7 @@
       </div>
 
       <p class="body">Ils veulent passer de 1× à 10×. Je veux passer de 0 à 1.</p>
+      <div class="section-line" aria-hidden="true"></div>
     </section>
 
     <!-- THE VISION — LAYER 1 -->
@@ -1152,9 +1229,11 @@
         <div class="vision-item" role="listitem">
           <div class="vision-icon" aria-hidden="true">🤲</div>
           <div>
+            <div class="mini-label">réactif</div>
             <div class="vision-item-title">Elle accepte une pensée à moitié formée</div>
             <div class="vision-item-desc">Pas besoin de formuler parfaitement. Un fragment suffit. Un outil qui exige des prompts parfaits exige des fonctions exécutives pour accéder à l'aide.</div>
-            <div class="vision-item-example">« Le truc... le formulaire... pour la CAF... » → « Le renouvellement de votre APL ? Il est dû le 15. Voici les pièces nécessaires. »</div>
+            <div class="vision-item-example">« Le truc... le formulaire... pour la CAF... » → « Le renouvellement de ton APL ? Il est dû le 15. Voici les pièces nécessaires. »</div>
+            <div class="vision-map">↔ initiation, mémoire de travail</div>
           </div>
         </div>
 
@@ -1171,8 +1250,8 @@
           <div class="vision-icon" aria-hidden="true">🔄</div>
           <div>
             <div class="vision-item-title">Elle relance sans culpabiliser</div>
-            <div class="vision-item-desc">Pas de streak cassé. Pas de « vous n'avez pas fait X ». Juste une reprise douce, là où vous en étiez, comme si rien ne s'était passé.</div>
-            <div class="vision-item-example">« Hey — le doc est toujours là où vous l'avez laissé. On reprend ? »</div>
+            <div class="vision-item-desc">Pas de streak cassé. Pas de « vous n'avez pas fait X ». Juste une reprise douce, là où tu en étais, comme si rien ne s'était passé.</div>
+            <div class="vision-item-example">« Hey — le doc est toujours là où tu l'as laissé. On reprend ? »</div>
           </div>
         </div>
       </div>
@@ -1188,9 +1267,11 @@
         <div class="vision-item layer2" role="listitem">
           <div class="vision-icon" aria-hidden="true">🫵</div>
           <div>
+            <div class="mini-label">proactif</div>
             <div class="vision-item-title">Elle initie le premier pas</div>
             <div class="vision-item-desc">Pas un rappel passif — une amorce. La différence entre « n'oubliez pas » (que j'ignore) et « j'ai déjà commencé » (le mur est percé).</div>
-            <div class="vision-item-example">« Devoir pour jeudi : j'ai créé le doc, posé le plan, trouvé 3 sources. Vous voulez juste jeter un œil ? »</div>
+            <div class="vision-item-example">« Devoir pour jeudi : j'ai créé le doc, posé le plan, trouvé 3 sources. Tu veux juste jeter un œil ? »</div>
+            <div class="vision-map">↔ initiation, planification</div>
           </div>
         </div>
 
@@ -1199,7 +1280,7 @@
           <div>
             <div class="vision-item-title">Elle lit mon énergie, pas juste mon calendrier</div>
             <div class="vision-item-desc">Elle sait que le mardi soir après les cours c'est dur. Que le matin est meilleur. Que la paralysie augmente quand j'ai faim. Elle module la demande en conséquence.</div>
-            <div class="vision-item-example">Mardi 19h : « Soirée light. Le seul truc : est-ce que vous avez mangé ? » — Mercredi 9h : « Bon créneau pour le dossier, j'ai pré-rempli ce que je pouvais. »</div>
+            <div class="vision-item-example">Mardi 19h : « Soirée light. Le seul truc : est-ce que tu as mangé ? » — Mercredi 9h : « Bon créneau pour le dossier, j'ai pré-rempli ce que je pouvais. »</div>
           </div>
         </div>
 
@@ -1208,7 +1289,7 @@
           <div>
             <div class="vision-item-title">Elle surveille mes angles morts</div>
             <div class="vision-item-desc">Les mails non lus depuis 5 jours. Le message resté sans réponse. Le rendez-vous repoussé depuis 3 semaines. Elle les remonte au bon moment — pas tous en même temps.</div>
-            <div class="vision-item-example">« Il y a une relance qui traîne depuis 2 jours. Je vous prépare une réponse courte ? Ça prend 10 secondes de valider. »</div>
+            <div class="vision-item-example">« Il y a une relance qui traîne depuis 2 jours. Je te prépare une réponse courte ? Ça prend 10 secondes de valider. »</div>
           </div>
         </div>
 
@@ -1217,7 +1298,7 @@
           <div>
             <div class="vision-item-title">Elle intercepte les spirales</div>
             <div class="vision-item-desc">Quand je dérive (scroll, hyperfocus inutile), elle interrompt doucement, avec le bon levier, sans honte.</div>
-            <div class="vision-item-example">« Vous scrolliez depuis un moment. Pas de stress. Première étape : ouvrir le doc. »</div>
+            <div class="vision-item-example">« Tu scrollais depuis un moment. Pas de stress. Première étape : ouvrir le doc. »</div>
           </div>
         </div>
       </div>
@@ -1233,9 +1314,11 @@
         <div class="vision-item layer3" role="listitem">
           <div class="vision-icon" aria-hidden="true">⚙️</div>
           <div>
+            <div class="mini-label">asynchrone</div>
             <div class="vision-item-title">Elle pré-mâche l'administratif</div>
             <div class="vision-item-desc">Elle lit un mail, extrait une deadline, prépare les pièces, pré-remplit — et me rend un seul bouton : « Valider ».</div>
-            <div class="vision-item-example">« CAF : formulaire prêt (1 signature). Pièce manquante : justificatif X. Je vous montre où cliquer. »</div>
+            <div class="vision-item-example">« CAF : formulaire prêt (1 signature). Pièce manquante : justificatif X. Je te montre où cliquer. »</div>
+            <div class="vision-map">↔ auto-monitoring, transition</div>
           </div>
         </div>
 
@@ -1253,7 +1336,7 @@
           <div>
             <div class="vision-item-title">Elle anticipe les crashs</div>
             <div class="vision-item-desc">Elle voit une semaine qui surcharge, et redistribue avant la collision — sans faire disparaître les choses, juste en les rendant gérables.</div>
-            <div class="vision-item-example">« Semaine chargée : j'ai déplacé 2 tâches non urgentes et préparé le plus gros. Il vous reste 3 actions humaines. »</div>
+            <div class="vision-item-example">« Semaine chargée : j'ai déplacé 2 tâches non urgentes et préparé le plus gros. Il te reste 3 actions humaines. »</div>
           </div>
         </div>
 
@@ -1390,7 +1473,7 @@
         </div>
         <div class="but-item">
           <span class="nb-label">Mais ça</span>
-          Un agent qui agit en arrière-plan mais me montre tout le matin : « voilà ce que j'ai fait, voilà ce qui attend votre ok ».
+          Un agent qui agit en arrière-plan mais me montre tout le matin : « voilà ce que j'ai fait, voilà ce qui attend ton ok ».
         </div>
       </div>
 
@@ -1444,19 +1527,19 @@
 
         <div class="scenario-beat">
           <div class="scenario-time">13h00 — Sortie de cours</div>
-          <div class="scenario-action"><em>« La pharmacie est à 200 m sur votre chemin. Si vous passez maintenant, c'est fait en 6 minutes. »</em></div>
+          <div class="scenario-action"><em>« La pharmacie est à 200 m sur ton chemin. Si vous passez maintenant, c'est fait en 6 minutes. »</em></div>
           <div class="scenario-internal">Rappel contextuel, pas un timer arbitraire que j'ignore.</div>
         </div>
 
         <div class="scenario-beat">
           <div class="scenario-time">15h00 — Creux, scroll</div>
-          <div class="scenario-action"><em>« Hey — le devoir d'histoire pour jeudi : j'ai structuré un plan et trouvé 3 sources. Vous voulez juste jeter un œil ? »</em></div>
+          <div class="scenario-action"><em>« Hey — le devoir d'histoire pour jeudi : j'ai structuré un plan et trouvé 3 sources. Tu veux juste jeter un œil ? »</em></div>
           <div class="scenario-internal">L'agent ne me demande pas de “commencer”. Il m'invite à entrer dans une tâche déjà percée.</div>
         </div>
 
         <div class="scenario-beat">
           <div class="scenario-time">19h30 — Mardi soir post-cours</div>
-          <div class="scenario-action">Énergie à zéro. <em>« Mardi soir — on fait light. Le seul truc important : est-ce que vous avez mangé ? Tout le reste est optionnel. »</em></div>
+          <div class="scenario-action">Énergie à zéro. <em>« Mardi soir — on fait light. Le seul truc important : est-ce que tu as mangé ? Tout le reste est optionnel. »</em></div>
           <div class="scenario-internal">Elle sait que ce soir-là, le baseline c'est manger et dormir. Pas optimiser.</div>
         </div>
 
@@ -1538,6 +1621,12 @@
       </div>
     </section>
 
+    <div class="micro-scenario fade-up" aria-label="Micro-scénario couche 3">
+      <div class="micro-line"><span class="micro-time">03:00</span>je dors : l’agent tourne (tri, brouillons, deadlines).</div>
+      <div class="micro-line"><span class="micro-time">07:45</span>réveil : voilà ce qui est fait, voilà ce qui attend un OK.</div>
+      <div class="micro-line"><span class="micro-time">09:00</span>freeze : une marche (chaussures / ouvrir le doc).</div>
+    </div>
+
     <!-- CLOSING -->
     <div class="closing fade-up">
       <div class="closing-text">
@@ -1546,6 +1635,7 @@
         Eux appellent ça un « agent ». Moi j'appelle ça <strong>fonctionner</strong>.
       </div>
     </div>
+    <p class="cta-line">Si vous construisez des agents IA, pensez “baseline d’abord”.</p>
 
     <footer>
       Vision personnelle · février 2026 · v3 (couches) · Texte de travail (produit / design) · Ne remplace pas un avis médical
