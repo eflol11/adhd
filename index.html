@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Vision personnelle d'une IA prothétique pour TDAH : passer de 0 à 1, avec un design centré sur le baseline, la reprise et la transparence." />
+<meta property="og:title" content="Ce dont j'ai besoin" />
+<meta property="og:description" content="Une vision produit d'une IA prothétique pour fonctions exécutives : fiable, transparente, et orientée reprise." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<title>Ce dont j'ai besoin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .exec-card,
+    .vision-item,
+    .not-item,
+    .but-item,
+    .closing,
+    .distinction,
+    .vision-icon {
+      transform: none !important;
+      transition: none !important;
+      box-shadow: none !important;
+      animation: none !important;
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream: #faf6f0;
+    --warm-bg: #f5efe6;
+    --surface: #ede5d8;
+
+    --text: #2c2416;
+    --text-soft: #5c5040;
+    --text-muted: #8a7e6e;
+
+    --terracotta: #c4673c;
+    --terracotta-soft: rgba(196, 103, 60, 0.10);
+
+    --blue: #3c6e8c;
+    --blue-soft: rgba(60, 110, 140, 0.08);
+
+    --sage: #6a7c5a;
+    --sage-soft: rgba(106, 124, 90, 0.10);
+
+    --gap-red: #c45c4a;
+    --gap-red-soft: rgba(196, 92, 74, 0.08);
+
+    --bridge: #d4a054;
+    --bridge-soft: rgba(212, 160, 84, 0.10);
+
+    --ink: rgba(0,0,0,0.08);
+    --shadow: 0 10px 28px rgba(44,36,22,0.06);
+
+    --hover-lift: -4px;
+    --hover-shadow: 0 14px 30px rgba(44,36,22,0.10);
+    --hover-shadow-soft: 0 10px 22px rgba(44,36,22,0.06);
+    --hover-border: rgba(0,0,0,0.12);
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 16px;
+    background: #fff;
+    color: var(--text);
+    border: 1px solid var(--ink);
+    border-radius: 8px;
+    padding: 10px 12px;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+  }
+
+  .skip-link:focus { left: 16px; }
+
+  :focus-visible {
+    outline: 3px solid rgba(196, 103, 60, 0.45);
+    outline-offset: 3px;
+    border-radius: 10px;
+  }
+
+  main.page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+  }
+
+  /* ===== HEADER ===== */
+  header { margin-bottom: 80px; position: relative; }
+
+  .epigraph {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 20px;
+    font-optical-sizing: auto;
+  }
+
+  h1 em {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--text-soft);
+    line-height: 1.7;
+    max-width: 590px;
+  }
+
+  .subtitle strong { font-weight: 500; color: var(--text); }
+
+  .header-line {
+    width: 60px;
+    height: 2px;
+    background: var(--terracotta);
+    margin-top: 32px;
+    border-radius: 1px;
+  }
+
+  .micro-disclaimer {
+    margin-top: 18px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    max-width: 620px;
+    border-left: 3px solid rgba(0,0,0,0.08);
+    padding-left: 12px;
+  }
+
+  /* ===== SECTIONS ===== */
+  section { margin-bottom: 72px; }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+
+  p.body {
+    font-size: 0.92rem;
+    color: var(--text-soft);
+    line-height: 1.8;
+    margin-bottom: 14px;
+    max-width: 660px;
+  }
+
+  .callout {
+    margin-top: 18px;
+    padding: 14px 16px;
+    background: rgba(0,0,0,0.02);
+    border: 1px solid var(--ink);
+    border-radius: 12px;
+    max-width: 660px;
+  }
+
+  .callout-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .callout-body {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+
+  /* ===== THE GAP — Executive functions ===== */
+  .exec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 28px 0;
+  }
+
+  @media (max-width: 560px) {
+    .exec-grid { grid-template-columns: 1fr; }
+  }
+
+  .exec-card {
+    padding: 18px 20px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .exec-card.gap {
+    background: var(--gap-red-soft);
+    border: 1px solid rgba(196, 92, 74, 0.12);
+  }
+
+  .exec-card.gap::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--gap-red);
+    border-radius: 12px 0 0 12px;
+  }
+
+  .exec-card-name {
+    font-family: 'Fraunces', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+
+  .exec-card-what {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .exec-card-feel {
+    font-size: 0.78rem;
+    color: var(--gap-red);
+    line-height: 1.5;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* ===== THE DISTINCTION ===== */
+  .distinction {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: stretch;
+    margin: 32px 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--ink);
+  }
+
+  @media (max-width: 560px) {
+    .distinction { grid-template-columns: 1fr; }
+    .distinction-divider {
+      width: 100%; height: 1px;
+      border-left: none !important;
+      border-top: 1px dashed rgba(0,0,0,0.12) !important;
+    }
+  }
+
+  .distinction-side { padding: 28px 24px; }
+  .distinction-side.them { background: rgba(0,0,0,0.02); }
+  .distinction-side.me { background: var(--terracotta-soft); }
+
+  .distinction-divider {
+    border-left: 1px dashed rgba(0,0,0,0.12);
+    align-self: stretch;
+  }
+
+  .distinction-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .distinction-word {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .distinction-side.them .distinction-word { color: var(--text-muted); }
+  .distinction-side.me .distinction-word { color: var(--terracotta); }
+
+  .distinction-desc {
+    font-size: 0.8rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  /* ===== THE VISION — layered ===== */
+  .vision-list {
+    margin: 22px 0 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .vision-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 16px 20px;
+    background: var(--blue-soft);
+    border-radius: 12px;
+    border: 1px solid rgba(60, 110, 140, 0.10);
+  }
+
+  .vision-item.layer2 {
+    background: var(--sage-soft);
+    border-color: rgba(106, 124, 90, 0.12);
+  }
+
+  .vision-item.layer3 {
+    background: var(--bridge-soft);
+    border-color: rgba(212, 160, 84, 0.15);
+  }
+
+  .vision-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(60, 110, 140, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .vision-item.layer2 .vision-icon { background: rgba(106, 124, 90, 0.12); }
+  .vision-item.layer3 .vision-icon { background: rgba(212, 160, 84, 0.14); }
+
+  .vision-item-title {
+    font-family: 'Fraunces', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+
+  .vision-item-desc {
+    font-size: 0.8rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  .vision-item-example {
+    font-size: 0.75rem;
+    color: var(--blue);
+    margin-top: 6px;
+    padding: 6px 10px;
+    background: rgba(60, 110, 140, 0.07);
+    border-radius: 8px;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .vision-item.layer2 .vision-item-example {
+    color: var(--sage);
+    background: rgba(106, 124, 90, 0.07);
+  }
+
+  .vision-item.layer3 .vision-item-example {
+    color: #9a7030;
+    background: rgba(212, 160, 84, 0.09);
+  }
+
+  /* ===== PRINCIPLES ===== */
+  .principle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 26px 0 10px;
+  }
+
+  @media (max-width: 560px) {
+    .principle-grid { grid-template-columns: 1fr; }
+  }
+
+  .principle-card {
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.02);
+    border: 1px solid var(--ink);
+  }
+
+  .principle-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-family: 'Fraunces', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .principle-badge {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid var(--ink);
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #fff;
+  }
+
+  .principle-desc {
+    font-size: 0.8rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  .principle-example {
+    margin-top: 10px;
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    border-left: 2px solid rgba(0,0,0,0.08);
+    padding-left: 10px;
+    font-style: italic;
+  }
+
+  /* ===== CONTROL LOOP ===== */
+  .loop {
+    margin: 26px 0;
+    padding: 18px 18px;
+    border-radius: 14px;
+    border: 1px solid var(--ink);
+    background: #fff;
+    box-shadow: var(--shadow);
+    max-width: 700px;
+  }
+
+  .loop-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .loop-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .loop-legend {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .loop-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  @media (max-width: 560px) {
+    .loop-steps { grid-template-columns: 1fr; }
+  }
+
+  .loop-step {
+    padding: 14px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.06);
+    background: rgba(0,0,0,0.02);
+  }
+
+  .loop-step strong { color: var(--text); font-weight: 600; }
+
+  .loop-step p {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  /* ===== TRUST CONTRACT ===== */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 26px 0;
+  }
+
+  @media (max-width: 560px) {
+    .trust-grid { grid-template-columns: 1fr; }
+  }
+
+  .trust-card {
+    padding: 16px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 160, 84, 0.18);
+    background: var(--bridge-soft);
+  }
+
+  .trust-title {
+    font-family: 'Fraunces', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .trust-desc {
+    font-size: 0.8rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  .trust-small {
+    margin-top: 10px;
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    border-left: 2px solid rgba(0,0,0,0.08);
+    padding-left: 10px;
+    font-style: italic;
+  }
+
+  /* ===== SCENARIO — a day ===== */
+  .scenario {
+    position: relative;
+    padding-left: 28px;
+    margin: 28px 0;
+  }
+
+  .scenario::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--bridge), var(--sage), var(--blue));
+    border-radius: 1px;
+  }
+
+  .scenario-beat {
+    position: relative;
+    margin-bottom: 24px;
+    padding: 14px 18px;
+    background: var(--warm-bg);
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .scenario-beat::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 18px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--bridge);
+    background: var(--cream);
+  }
+
+  .scenario-beat:nth-child(3n+2)::before { border-color: var(--sage); }
+  .scenario-beat:nth-child(3n)::before { border-color: var(--blue); }
+
+  .scenario-time {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .scenario-action {
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .scenario-action em {
+    color: var(--blue);
+    font-style: italic;
+  }
+
+  .scenario-internal {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+    padding-left: 12px;
+    border-left: 2px solid rgba(0,0,0,0.06);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* ===== METRICS ===== */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 26px 0;
+  }
+
+  @media (max-width: 560px) {
+    .metric-grid { grid-template-columns: 1fr; }
+  }
+
+  .metric-card {
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: rgba(106, 124, 90, 0.08);
+    border: 1px solid rgba(106, 124, 90, 0.16);
+  }
+
+  .metric-title {
+    font-family: 'Fraunces', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .metric-desc {
+    font-size: 0.8rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  /* ===== THE AHA TIMELINE ===== */
+  .aha-timeline {
+    display: flex;
+    gap: 0;
+    margin: 28px 0;
+    position: relative;
+  }
+
+  .aha-timeline::after {
+    content: '';
+    position: absolute;
+    bottom: 52px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--text-muted), var(--terracotta), var(--sage));
+  }
+
+  .aha-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 8px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aha-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 2px solid var(--text-muted);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+    order: 2;
+  }
+
+  .aha-step.active .aha-dot {
+    border-color: var(--terracotta);
+    background: var(--terracotta);
+    box-shadow: 0 0 0 4px rgba(196, 103, 60, 0.2);
+  }
+
+  .aha-step.future .aha-dot {
+    border-color: var(--sage);
+    border-style: dashed;
+  }
+
+  .aha-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 2px;
+    order: 3;
+  }
+
+  .aha-year {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    order: 1;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .aha-desc {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+    order: 4;
+  }
+
+  .aha-step.active .aha-label { color: var(--terracotta); font-weight: 600; }
+  .aha-step.future .aha-label { color: var(--sage); }
+
+  @media (max-width: 560px) {
+    .aha-timeline { flex-direction: column; gap: 16px; }
+    .aha-timeline::after { display: none; }
+    .aha-step { flex-direction: row; gap: 12px; text-align: left; }
+    .aha-dot { order: 0; margin-bottom: 0; flex-shrink: 0; }
+    .aha-year, .aha-label, .aha-desc { order: 0; }
+    .aha-step { flex-wrap: wrap; }
+  }
+
+  /* ===== NOT / BUT ===== */
+  .not-but {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 24px 0;
+  }
+
+  @media (max-width: 560px) {
+    .not-but { grid-template-columns: 1fr; }
+  }
+
+  .not-item, .but-item {
+    padding: 16px 18px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .not-item {
+    background: rgba(0,0,0,0.025);
+    color: var(--text-muted);
+    border-left: 3px solid rgba(0,0,0,0.15);
+  }
+
+  .but-item {
+    background: var(--sage-soft);
+    color: var(--text);
+    border: 1px solid rgba(106, 124, 90, 0.12);
+  }
+
+  .nb-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .not-item .nb-label { color: var(--text-muted); }
+  .but-item .nb-label { color: var(--sage); font-weight: 500; }
+
+  /* ===== CLOSING ===== */
+  .closing {
+    margin-top: 80px;
+    padding: 32px;
+    background: var(--bridge-soft);
+    border-radius: 14px;
+    border: 1px solid rgba(212, 160, 84, 0.15);
+    position: relative;
+  }
+
+  .closing-text {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .closing-text strong {
+    font-weight: 600;
+    font-style: normal;
+    color: var(--terracotta);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    margin-top: 72px;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  .fade-up:nth-child(2) { animation-delay: 0.1s; }
+  .fade-up:nth-child(3) { animation-delay: 0.2s; }
+  .fade-up:nth-child(4) { animation-delay: 0.3s; }
+
+
+  /* ===== SUBTLE BLOCK MOTION (minimal + a11y) ===== */
+  .exec-card,
+  .vision-item,
+  .not-item,
+  .but-item,
+  .closing,
+  .distinction {
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    will-change: transform;
+    transform: translateZ(0);
+    box-shadow: var(--hover-shadow-soft);
+  }
+
+  /* bonus: icon micro-zoom support */
+  .vision-icon {
+    transition: transform 180ms ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .exec-card:hover,
+    .exec-card:focus-within,
+    .vision-item:hover,
+    .vision-item:focus-within,
+    .not-item:hover,
+    .not-item:focus-within,
+    .but-item:hover,
+    .but-item:focus-within,
+    .closing:hover,
+    .closing:focus-within,
+    .distinction:hover,
+    .distinction:focus-within {
+      transform: translateY(var(--hover-lift));
+      box-shadow: var(--hover-shadow);
+      border-color: var(--hover-border);
+    }
+
+    .vision-item:hover .vision-icon,
+    .vision-item:focus-within .vision-icon {
+      transform: scale(1.03);
+    }
+  }
+
+  /* ===== RESPONSIVE POLISH ===== */
+  @media (max-width: 900px) {
+    main.page {
+      max-width: 100%;
+      padding: 64px 20px 96px;
+    }
+
+    header { margin-bottom: 64px; }
+    section { margin-bottom: 60px; }
+
+    .distinction-side,
+    .vision-item,
+    .principle-card,
+    .trust-card,
+    .metric-card,
+    .loop,
+    .scenario-beat,
+    .not-item,
+    .but-item,
+    .callout,
+    .closing { padding: 16px; }
+
+    .scenario { padding-left: 24px; }
+    .scenario-beat::before { left: -21px; }
+  }
+
+  @media (max-width: 700px) {
+    h1 { font-size: clamp(2rem, 7.5vw, 3rem); }
+    h2 { font-size: clamp(1.28rem, 4.8vw, 1.6rem); }
+
+    .subtitle { font-size: 0.98rem; }
+    p.body,
+    .scenario-action,
+    .trust-desc,
+    .metric-desc,
+    .distinction-desc { font-size: 0.88rem; }
+
+    .exec-grid,
+    .principle-grid,
+    .trust-grid,
+    .metric-grid,
+    .not-but,
+    .loop-steps { grid-template-columns: 1fr; }
+
+    .vision-item {
+      grid-template-columns: 40px 1fr;
+      gap: 12px;
+    }
+
+    .vision-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .aha-timeline {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .aha-timeline::after { display: none; }
+
+    .aha-step {
+      flex-direction: row;
+      gap: 10px;
+      text-align: left;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    .aha-dot {
+      order: 0;
+      margin: 2px 0 0;
+      flex-shrink: 0;
+    }
+
+    .aha-year,
+    .aha-label,
+    .aha-desc { order: 0; }
+
+    .closing-text { font-size: 1.05rem; }
+  }
+
+  @media (max-width: 420px) {
+    main.page { padding: 52px 14px 80px; }
+
+    .epigraph,
+    .section-label,
+    .scenario-time,
+    .aha-year,
+    .nb-label,
+    .callout-title,
+    .loop-legend { letter-spacing: 0.09em; }
+
+    .header-line { margin-top: 24px; }
+
+    .micro-disclaimer,
+    .scenario-internal,
+    .vision-item-example,
+    .principle-example,
+    .trust-small,
+    footer { font-size: 0.72rem; }
+
+    .exec-card,
+    .vision-item,
+    .principle-card,
+    .trust-card,
+    .metric-card,
+    .scenario-beat,
+    .not-item,
+    .but-item,
+    .callout,
+    .closing,
+    .loop-step { padding: 14px; }
+
+    .scenario { padding-left: 20px; }
+    .scenario::before { left: 4px; }
+    .scenario-beat::before { left: -17px; }
+  }
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <main id="contenu" class="page">
+
+    <header class="fade-up">
+      <div class="epigraph">Vision personnelle</div>
+      <h1>Pas plus productif.<br>Juste <em>fonctionnel.</em></h1>
+      <p class="subtitle">
+        Ce que je veux de l'IA, ce n'est pas un assistant qui optimise ma vie.
+        C'est une <strong>prothèse cognitive</strong> — un exosquelette pour les fonctions exécutives que mon cerveau ne fournit pas.
+      </p>
+      <div class="header-line" aria-hidden="true"></div>
+      <p class="micro-disclaimer">
+        Note : ce texte décrit une <strong>vision produit</strong> et un modèle mental. Il ne remplace pas un avis médical.
+        L'objectif n'est pas « la performance », mais le <em>baseline</em> : manger, dormir, sortir, rendre les devoirs, répondre aux messages.
+      </p>
+    </header>
+
+    <!-- THE GAP -->
+    <section class="fade-up">
+      <div class="section-label">Le déficit</div>
+      <h2>Ce que le TDAH prend</h2>
+      <p class="body">
+        Le TDAH n'est pas un manque d'intelligence ou de volonté. C'est un déficit de fonctions exécutives —
+        le système de gestion qui transforme l'intention en action. Chaque jour, ces six fonctions fonctionnent en sous-régime :
+      </p>
+
+      <div class="exec-grid" role="list">
+        <div class="exec-card gap" role="listitem">
+          <div class="exec-card-name">Initiation</div>
+          <div class="exec-card-what">Démarrer une tâche — franchir le mur entre « je sais que je dois » et « je fais »</div>
+          <div class="exec-card-feel">→ La montagne invisible devant chaque email</div>
+        </div>
+        <div class="exec-card gap" role="listitem">
+          <div class="exec-card-name">Mémoire de travail</div>
+          <div class="exec-card-what">Garder plusieurs informations actives en même temps pour les manipuler</div>
+          <div class="exec-card-feel">→ Entrer dans une pièce et oublier pourquoi</div>
+        </div>
+        <div class="exec-card gap" role="listitem">
+          <div class="exec-card-name">Planification</div>
+          <div class="exec-card-what">Décomposer un objectif en étapes ordonnées, estimer le temps de chacune</div>
+          <div class="exec-card-feel">→ Le projet entier semble être une seule masse opaque</div>
+        </div>
+        <div class="exec-card gap" role="listitem">
+          <div class="exec-card-name">Régulation émotionnelle</div>
+          <div class="exec-card-what">Moduler la réponse émotionnelle pour qu'elle soit proportionnelle au stimulus</div>
+          <div class="exec-card-feel">→ La frustration de 0 à 100 en une seconde</div>
+        </div>
+        <div class="exec-card gap" role="listitem">
+          <div class="exec-card-name">Transition</div>
+          <div class="exec-card-what">Passer d'une tâche à l'autre sans rester collé à la précédente</div>
+          <div class="exec-card-feel">→ Hyperfocus sur la mauvaise chose au mauvais moment</div>
+        </div>
+        <div class="exec-card gap" role="listitem">
+          <div class="exec-card-name">Auto-monitoring</div>
+          <div class="exec-card-what">Observer son propre comportement en temps réel, corriger le cap</div>
+          <div class="exec-card-feel">→ Réaliser à 23h qu'on n'a rien fait de la soirée</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title">Point clé</div>
+        <div class="callout-body">
+          Beaucoup d'outils supposent un utilisateur déjà « en marche » : je planifie, je lance, je maintiens.
+          Or le problème, c'est précisément le <em>démarrage</em> et la <em>reprise</em>. La prothèse doit d'abord gagner ces deux batailles.
+        </div>
+      </div>
+    </section>
+
+    <!-- THE DISTINCTION -->
+    <section class="fade-up">
+      <div class="section-label">La distinction fondamentale</div>
+      <h2>Deux visions de l'IA</h2>
+
+      <div class="distinction" aria-label="Comparaison : productivité vs fonctionner">
+        <div class="distinction-side them">
+          <div class="distinction-label">Ce que l'industrie vend</div>
+          <div class="distinction-word">Productivité</div>
+          <div class="distinction-desc">Faire plus, plus vite. Optimiser un workflow déjà fonctionnel. Le point de départ est un humain capable — l'IA l'accélère.</div>
+        </div>
+        <div class="distinction-divider" aria-hidden="true"></div>
+        <div class="distinction-side me">
+          <div class="distinction-label">Ce dont j'ai besoin</div>
+          <div class="distinction-word">Fonctionner</div>
+          <div class="distinction-desc">Atteindre le baseline. Transformer l'intention en action quand le cerveau ne fournit pas le pont. Le point de départ est un gap — l'IA le comble.</div>
+        </div>
+      </div>
+
+      <p class="body">Ils veulent passer de 1× à 10×. Je veux passer de 0 à 1.</p>
+    </section>
+
+    <!-- THE VISION — LAYER 1 -->
+    <section class="fade-up">
+      <div class="section-label">L'allié objectif — couche 1</div>
+      <h2>Réactif intelligent</h2>
+      <p class="body">Ce que l'IA fait <em>quand je lui parle</em>. Le minimum vital — et déjà partiellement possible aujourd'hui.</p>
+
+      <div class="vision-list" role="list">
+        <div class="vision-item" role="listitem">
+          <div class="vision-icon" aria-hidden="true">🤲</div>
+          <div>
+            <div class="vision-item-title">Elle accepte une pensée à moitié formée</div>
+            <div class="vision-item-desc">Pas besoin de formuler parfaitement. Un fragment suffit. Un outil qui exige des prompts parfaits exige des fonctions exécutives pour accéder à l'aide.</div>
+            <div class="vision-item-example">« Le truc... le formulaire... pour la CAF... » → « Le renouvellement de votre APL ? Il est dû le 15. Voici les pièces nécessaires. »</div>
+          </div>
+        </div>
+
+        <div class="vision-item" role="listitem">
+          <div class="vision-icon" aria-hidden="true">🧩</div>
+          <div>
+            <div class="vision-item-title">Elle décompose sans qu'on le demande</div>
+            <div class="vision-item-desc">« Faire le dossier » n'est pas une tâche — c'est 12 tâches. Elle le sait et ne présente que la première marche.</div>
+            <div class="vision-item-example">« Étape 1 : ouvrir le doc et écrire une phrase — juste une. On verra la suite après. »</div>
+          </div>
+        </div>
+
+        <div class="vision-item" role="listitem">
+          <div class="vision-icon" aria-hidden="true">🔄</div>
+          <div>
+            <div class="vision-item-title">Elle relance sans culpabiliser</div>
+            <div class="vision-item-desc">Pas de streak cassé. Pas de « vous n'avez pas fait X ». Juste une reprise douce, là où vous en étiez, comme si rien ne s'était passé.</div>
+            <div class="vision-item-example">« Hey — le doc est toujours là où vous l'avez laissé. On reprend ? »</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE VISION — LAYER 2 -->
+    <section class="fade-up">
+      <div class="section-label">L'allié objectif — couche 2</div>
+      <h2>Proactif contextuel</h2>
+      <p class="body">Ce que l'IA fait <em>sans que je le demande</em> — parce qu'elle connaît mes patterns, mes contraintes, et le contexte. C'est ici que la prothèse devient réelle.</p>
+
+      <div class="vision-list" role="list">
+        <div class="vision-item layer2" role="listitem">
+          <div class="vision-icon" aria-hidden="true">🫵</div>
+          <div>
+            <div class="vision-item-title">Elle initie le premier pas</div>
+            <div class="vision-item-desc">Pas un rappel passif — une amorce. La différence entre « n'oubliez pas » (que j'ignore) et « j'ai déjà commencé » (le mur est percé).</div>
+            <div class="vision-item-example">« Devoir pour jeudi : j'ai créé le doc, posé le plan, trouvé 3 sources. Vous voulez juste jeter un œil ? »</div>
+          </div>
+        </div>
+
+        <div class="vision-item layer2" role="listitem">
+          <div class="vision-icon" aria-hidden="true">🌡️</div>
+          <div>
+            <div class="vision-item-title">Elle lit mon énergie, pas juste mon calendrier</div>
+            <div class="vision-item-desc">Elle sait que le mardi soir après les cours c'est dur. Que le matin est meilleur. Que la paralysie augmente quand j'ai faim. Elle module la demande en conséquence.</div>
+            <div class="vision-item-example">Mardi 19h : « Soirée light. Le seul truc : est-ce que vous avez mangé ? » — Mercredi 9h : « Bon créneau pour le dossier, j'ai pré-rempli ce que je pouvais. »</div>
+          </div>
+        </div>
+
+        <div class="vision-item layer2" role="listitem">
+          <div class="vision-icon" aria-hidden="true">👁️</div>
+          <div>
+            <div class="vision-item-title">Elle surveille mes angles morts</div>
+            <div class="vision-item-desc">Les mails non lus depuis 5 jours. Le message resté sans réponse. Le rendez-vous repoussé depuis 3 semaines. Elle les remonte au bon moment — pas tous en même temps.</div>
+            <div class="vision-item-example">« Il y a une relance qui traîne depuis 2 jours. Je vous prépare une réponse courte ? Ça prend 10 secondes de valider. »</div>
+          </div>
+        </div>
+
+        <div class="vision-item layer2" role="listitem">
+          <div class="vision-icon" aria-hidden="true">🛡️</div>
+          <div>
+            <div class="vision-item-title">Elle intercepte les spirales</div>
+            <div class="vision-item-desc">Quand je dérive (scroll, hyperfocus inutile), elle interrompt doucement, avec le bon levier, sans honte.</div>
+            <div class="vision-item-example">« Vous scrolliez depuis un moment. Pas de stress. Première étape : ouvrir le doc. »</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE VISION — LAYER 3 -->
+    <section class="fade-up">
+      <div class="section-label">L'allié objectif — couche 3</div>
+      <h2>Asynchrone autonome (avec transparence)</h2>
+      <p class="body">Ce que l'IA fait <em>pendant que je dors, que je suis en cours, que je n'y pense pas</em>. Le travail invisible : admin, tri, suivi. Mais toujours avec un « journal d'actions » et un bouton <em>ok</em> avant l'envoi.</p>
+
+      <div class="vision-list" role="list">
+        <div class="vision-item layer3" role="listitem">
+          <div class="vision-icon" aria-hidden="true">⚙️</div>
+          <div>
+            <div class="vision-item-title">Elle pré-mâche l'administratif</div>
+            <div class="vision-item-desc">Elle lit un mail, extrait une deadline, prépare les pièces, pré-remplit — et me rend un seul bouton : « Valider ».</div>
+            <div class="vision-item-example">« CAF : formulaire prêt (1 signature). Pièce manquante : justificatif X. Je vous montre où cliquer. »</div>
+          </div>
+        </div>
+
+        <div class="vision-item layer3" role="listitem">
+          <div class="vision-icon" aria-hidden="true">📋</div>
+          <div>
+            <div class="vision-item-title">Elle fait le travail de méta-tâche</div>
+            <div class="vision-item-desc">Trier, classer, vérifier des échéances, préparer des brouillons, relancer au bon moment. Tout l'overhead qui, sinon, s'empile jusqu'au shutdown.</div>
+            <div class="vision-item-example">« Bilan : 3 mails traités, un brouillon prêt, 2 échéances sécurisées. Rien n'est tombé. »</div>
+          </div>
+        </div>
+
+        <div class="vision-item layer3" role="listitem">
+          <div class="vision-icon" aria-hidden="true">🔮</div>
+          <div>
+            <div class="vision-item-title">Elle anticipe les crashs</div>
+            <div class="vision-item-desc">Elle voit une semaine qui surcharge, et redistribue avant la collision — sans faire disparaître les choses, juste en les rendant gérables.</div>
+            <div class="vision-item-example">« Semaine chargée : j'ai déplacé 2 tâches non urgentes et préparé le plus gros. Il vous reste 3 actions humaines. »</div>
+          </div>
+        </div>
+
+        <div class="vision-item layer3" role="listitem">
+          <div class="vision-icon" aria-hidden="true">🧠</div>
+          <div>
+            <div class="vision-item-title">Elle est mon deuxième cortex préfrontal</div>
+            <div class="vision-item-desc">Mémoire de travail, séquençage, priorisation : elle garde en RAM ce que je perds, et me le restitue au format action.</div>
+            <div class="vision-item-example">« Ce matin : une seule chose — le doc de philo. Tout le reste est soit fait, soit non urgent. »</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title">Clause de sécurité</div>
+        <div class="callout-body">
+          Couche 3 = puissance. Donc : permissions par paliers, actions réversibles, historique lisible, et confirmation avant toute action externe.
+          Sinon, c'est un agent opaque — et c'est non.
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCIPLES -->
+    <section class="fade-up">
+      <div class="section-label">Design</div>
+      <h2>Les contraintes non négociables</h2>
+      <p class="body">
+        Si je devais écrire le « cahier des charges » de cette prothèse, il ne parlerait pas d'intelligence.
+        Il parlerait de <strong>fiabilité</strong>, de <strong>prévisibilité</strong>, et de <strong>coût cognitif minimal</strong>.
+      </p>
+
+      <div class="principle-grid" role="list">
+        <div class="principle-card" role="listitem">
+          <div class="principle-title">Friction &gt; fonctionnalités <span class="principle-badge">Priorité 1</span></div>
+          <div class="principle-desc">Chaque interaction doit réduire une charge (ambiguïté, initiation, décision), jamais en ajouter une.</div>
+          <div class="principle-example">Moins de menus. Plus de « voici 1 action ». Le reste est optionnel.</div>
+        </div>
+        <div class="principle-card" role="listitem">
+          <div class="principle-title">Reprise douce <span class="principle-badge">Anti-culpabilité</span></div>
+          <div class="principle-desc">Le système doit être conçu pour les ruptures : jours off, semaines off, rechutes. Revenir doit être facile.</div>
+          <div class="principle-example">Pas de punition. Pas de “streak”. Pas de morale. Juste continuité.</div>
+        </div>
+        <div class="principle-card" role="listitem">
+          <div class="principle-title">Modèle mental stable <span class="principle-badge">Prévisible</span></div>
+          <div class="principle-desc">Je dois comprendre ce que l'IA peut et ne peut pas faire. Sinon, la supervision devient une charge exécutive.</div>
+          <div class="principle-example">Règles simples, visibles, et un “mode safe” quand je ne vais pas bien.</div>
+        </div>
+        <div class="principle-card" role="listitem">
+          <div class="principle-title">Action d'abord <span class="principle-badge">0 → 1</span></div>
+          <div class="principle-desc">Le succès, c'est le premier mouvement. Le reste peut être imparfait. Un “bon” départ vaut plus qu'un “plan” parfait.</div>
+          <div class="principle-example">« Ouvrir le doc » &gt; « Planifier la semaine ».</div>
+        </div>
+      </div>
+
+      <div class="loop" aria-label="Boucle de contrôle : détecter, proposer, engager, vérifier">
+        <div class="loop-top">
+          <div class="loop-title">La prothèse comme boucle de contrôle</div>
+          <div class="loop-legend">Une aide utile = détection → action → retour → ajustement.</div>
+        </div>
+        <div class="loop-steps">
+          <div class="loop-step">
+            <strong>1) Détecter</strong>
+            <p>Repérer un état (freeze, procrastination, surcharge) via des signaux simples, sans “flicage” intrusif.</p>
+          </div>
+          <div class="loop-step">
+            <strong>2) Proposer</strong>
+            <p>Offrir 1 prochaine action, calibrée : <em>micro</em>, claire, faisable, sans “plan complet”.</p>
+          </div>
+          <div class="loop-step">
+            <strong>3) Engager</strong>
+            <p>Transformer la proposition en engagement léger (timer 10 min, ouverture du doc, brouillon d'un message).</p>
+          </div>
+          <div class="loop-step">
+            <strong>4) Vérifier &amp; réajuster</strong>
+            <p>Si échec : réduire l'échelle. Si réussite : proposer la marche suivante. Toujours sans culpabilité.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="fade-up">
+      <div class="section-label">Confiance</div>
+      <h2>Le contrat : pour que je la laisse entrer dans ma vie</h2>
+      <p class="body">
+        Une IA « TDAH-friendly » n'est pas d'abord empathique. Elle est <strong>fiable</strong>, <strong>bornée</strong> et <strong>transparente</strong>.
+        Je dois pouvoir prédire ce qui va se passer.
+      </p>
+
+      <div class="trust-grid" role="list">
+        <div class="trust-card" role="listitem">
+          <div class="trust-title">Permissions explicites, par paliers</div>
+          <div class="trust-desc">Rien n'est “implicite”. Chaque accès (agenda, mails, fichiers) a un bouton ON/OFF, et un mode lecture seule par défaut.</div>
+          <div class="trust-small">Idéalement : journal d'actions lisible + bouton “pause / stop” immédiat.</div>
+        </div>
+        <div class="trust-card" role="listitem">
+          <div class="trust-title">Mémoire contrôlable</div>
+          <div class="trust-desc">Je dois pouvoir voir, corriger et effacer ce que l'IA “croit savoir”. Sinon, la peur du drift bloque tout.</div>
+          <div class="trust-small">La mémoire doit être un objet manipulable, pas une boîte noire.</div>
+        </div>
+        <div class="trust-card" role="listitem">
+          <div class="trust-title">Aucune punition sociale</div>
+          <div class="trust-desc">Le produit ne doit pas exploiter la honte (streaks, badges, comparaisons) pour créer de l'adhérence.</div>
+          <div class="trust-small">Le carburant, c'est la continuité. Pas la pression.</div>
+        </div>
+        <div class="trust-card" role="listitem">
+          <div class="trust-title">Dégradations propres</div>
+          <div class="trust-desc">Quand je vais mal, l'outil doit devenir plus simple, pas plus bavard. Un mode “basique” doit exister.</div>
+          <div class="trust-small">Si je suis en crise : 1 action + respiration + dormir.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IT'S NOT -->
+    <section class="fade-up">
+      <div class="section-label">La frontière</div>
+      <h2>Ce que ce n'est pas</h2>
+
+      <div class="not-but">
+        <div class="not-item">
+          <span class="nb-label">Pas ça</span>
+          Un ami, un thérapeute, un substitut de lien humain
+        </div>
+        <div class="but-item">
+          <span class="nb-label">Mais ça</span>
+          Un outil — comme des lunettes, un fauteuil roulant, un implant cochléaire. Prothétique, pas relationnel.
+        </div>
+      </div>
+
+      <div class="not-but">
+        <div class="not-item">
+          <span class="nb-label">Pas ça</span>
+          Un agent opaque qui fait des choses dans mon dos
+        </div>
+        <div class="but-item">
+          <span class="nb-label">Mais ça</span>
+          Un agent qui agit en arrière-plan mais me montre tout le matin : « voilà ce que j'ai fait, voilà ce qui attend votre ok ».
+        </div>
+      </div>
+
+      <div class="not-but">
+        <div class="not-item">
+          <span class="nb-label">Pas ça</span>
+          Un outil qui me rend dépendant en faisant tout à ma place
+        </div>
+        <div class="but-item">
+          <span class="nb-label">Mais ça</span>
+          Un échafaudage qui fait le travail invisible (admin, tri, suivi) pour que mon énergie aille au travail réel (écrire, penser, créer, vivre).
+        </div>
+      </div>
+
+      <div class="not-but">
+        <div class="not-item">
+          <span class="nb-label">Pas ça</span>
+          Un système qui exige que je le configure et le monitore constamment
+        </div>
+        <div class="but-item">
+          <span class="nb-label">Mais ça</span>
+          Un système dont la maintenance n'est pas elle-même une charge exécutive. Si le monitoring demande des fonctions exécutives, c'est un échec de design.
+        </div>
+      </div>
+    </section>
+
+    <!-- A DAY -->
+    <section class="fade-up">
+      <div class="section-label">Scénario</div>
+      <h2>Un mardi de février, version idéale</h2>
+      <p class="body">Ce qui change : l'IA ne m'attend pas. Elle a travaillé en arrière-plan. Quand elle me parle, c'est la partie émergée.</p>
+
+      <div class="scenario" aria-label="Scénario : une journée guidée">
+        <div class="scenario-beat">
+          <div class="scenario-time">3h00 — Je dors</div>
+          <div class="scenario-action"><em>L'agent tourne.</em> Il a détecté une deadline (CAF), préparé un brouillon de réponse à un ami, et mis en attente 2 confirmations qui nécessitent mon ok.</div>
+          <div class="scenario-internal">Tout ça sans un seul token de mon attention. Le travail invisible est fait, mais rien n'est envoyé sans validation.</div>
+        </div>
+
+        <div class="scenario-beat">
+          <div class="scenario-time">7h45 — Réveil</div>
+          <div class="scenario-action"><em>« Bon matin. Pendant la nuit : 2 brouillons prêts (10 sec à valider), 1 échéance sécurisée. Aujourd'hui : philo à 10h. Le texte de Bergson est dans votre sac ? »</em></div>
+          <div class="scenario-internal">Je ne découvre pas une liste de trucs à faire. Je découvre une liste de trucs déjà préparés qui attendent un “ok”.</div>
+        </div>
+
+        <div class="scenario-beat">
+          <div class="scenario-time">9h00 — Paralysie matinale</div>
+          <div class="scenario-action">Je suis réveillé mais figé. <em>« Un seul geste : validez ce brouillon (10 secondes). Ensuite, mettez vos chaussures. »</em></div>
+          <div class="scenario-internal">Le “ok” coûte presque zéro effort, mais crée un micro-mouvement. La boucle d'initiation est amorcée.</div>
+        </div>
+
+        <div class="scenario-beat">
+          <div class="scenario-time">13h00 — Sortie de cours</div>
+          <div class="scenario-action"><em>« La pharmacie est à 200 m sur votre chemin. Si vous passez maintenant, c'est fait en 6 minutes. »</em></div>
+          <div class="scenario-internal">Rappel contextuel, pas un timer arbitraire que j'ignore.</div>
+        </div>
+
+        <div class="scenario-beat">
+          <div class="scenario-time">15h00 — Creux, scroll</div>
+          <div class="scenario-action"><em>« Hey — le devoir d'histoire pour jeudi : j'ai structuré un plan et trouvé 3 sources. Vous voulez juste jeter un œil ? »</em></div>
+          <div class="scenario-internal">L'agent ne me demande pas de “commencer”. Il m'invite à entrer dans une tâche déjà percée.</div>
+        </div>
+
+        <div class="scenario-beat">
+          <div class="scenario-time">19h30 — Mardi soir post-cours</div>
+          <div class="scenario-action">Énergie à zéro. <em>« Mardi soir — on fait light. Le seul truc important : est-ce que vous avez mangé ? Tout le reste est optionnel. »</em></div>
+          <div class="scenario-internal">Elle sait que ce soir-là, le baseline c'est manger et dormir. Pas optimiser.</div>
+        </div>
+
+        <div class="scenario-beat">
+          <div class="scenario-time">23h00 — Avant de dormir</div>
+          <div class="scenario-action"><em>« Demain : 1 marche (30 minutes) pour finir le devoir. Cette nuit, je prépare le terrain. Bonne nuit. »</em></div>
+          <div class="scenario-internal">Le lendemain est déjà un peu structuré. Moins d'anxiété à l'endormissement.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <section class="fade-up">
+      <div class="section-label">Mesure</div>
+      <h2>Comment savoir si ça marche</h2>
+      <p class="body">
+        Pour moi, une IA utile ne se mesure pas au nombre de tâches « complétées ». Elle se mesure à la réduction des échecs typiques :
+        démarrer, reprendre, et éviter le crash.
+      </p>
+
+      <div class="metric-grid" role="list">
+        <div class="metric-card" role="listitem">
+          <div class="metric-title">Temps jusqu'au 1er mouvement</div>
+          <div class="metric-desc">Combien de temps entre « je sais que je dois » et <em>une action</em> (ouvrir le doc, écrire 1 phrase, mettre les chaussures).</div>
+        </div>
+        <div class="metric-card" role="listitem">
+          <div class="metric-title">Latence de reprise</div>
+          <div class="metric-desc">Après une interruption (scroll, lit, dérive), combien de temps pour revenir à une trajectoire acceptable.</div>
+        </div>
+        <div class="metric-card" role="listitem">
+          <div class="metric-title">Charge décisionnelle</div>
+          <div class="metric-desc">Est-ce que l'outil réduit le nombre de micro-décisions (quoi faire, par où commencer, combien de temps) ou l'augmente.</div>
+        </div>
+        <div class="metric-card" role="listitem">
+          <div class="metric-title">Jours “baseline”</div>
+          <div class="metric-desc">Sur une semaine, combien de jours où j'ai mangé, dormi, répondu, et fait 1 chose utile — même minimale.</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title">Le critère secret</div>
+        <div class="callout-body">
+          Si l'outil me fait me sentir <em>capable de revenir</em> même après une journée ratée, alors il est utile.
+          Si l'outil me fait me sentir observé, évalué, ou “en échec”, il est toxique — même s'il est puissant.
+        </div>
+      </div>
+    </section>
+
+    <!-- THE AHA TIMELINE -->
+    <section class="fade-up">
+      <div class="section-label">Parcours</div>
+      <h2>Quand j'ai su</h2>
+
+      <div class="aha-timeline" aria-label="Timeline personnelle">
+        <div class="aha-step">
+          <div class="aha-year">~2020</div>
+          <div class="aha-dot" aria-hidden="true"></div>
+          <div class="aha-label">GPT-2, GPT-3</div>
+          <div class="aha-desc">Impressionnant mais inutile. Fallait formuler parfaitement. L'outil exigeait ce que le TDAH enlève.</div>
+        </div>
+        <div class="aha-step active">
+          <div class="aha-year">2022</div>
+          <div class="aha-dot" aria-hidden="true"></div>
+          <div class="aha-label">GPT-3.5 — le déclic</div>
+          <div class="aha-desc">Pour la première fois, je pouvais arriver avec une pensée à moitié formée et l'IA complétait. Le seuil.</div>
+        </div>
+        <div class="aha-step">
+          <div class="aha-year">2024–26</div>
+          <div class="aha-dot" aria-hidden="true"></div>
+          <div class="aha-label">Claude, agents</div>
+          <div class="aha-desc">Mémoire, outils, contexte persistant. Les briques existent, pas encore assemblées.</div>
+        </div>
+        <div class="aha-step future">
+          <div class="aha-year">~202X</div>
+          <div class="aha-dot" aria-hidden="true"></div>
+          <div class="aha-label">L'allié objectif</div>
+          <div class="aha-desc">Persistant. Asynchrone. Proactif. Transparent. Le cortex préfrontal externalisé.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <div class="closing fade-up">
+      <div class="closing-text">
+        Le vrai saut, ce n'est pas une IA plus intelligente. C'est une IA qui <strong>ne s'arrête jamais</strong> :
+        qui prépare pendant que je dors, qui rattrape les fils avant qu'ils cassent, et qui me rend la vie sous forme de <strong>petits OK</strong> et de <strong>premières marches</strong>.
+        Eux appellent ça un « agent ». Moi j'appelle ça <strong>fonctionner</strong>.
+      </div>
+    </div>
+
+    <footer>
+      Vision personnelle · février 2026 · v3 (couches) · Texte de travail (produit / design) · Ne remplace pas un avis médical
+    </footer>
+
+  </main>
+</body>
+</html>
